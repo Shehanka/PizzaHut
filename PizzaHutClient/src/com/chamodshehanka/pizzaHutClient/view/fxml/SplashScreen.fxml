@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="root" prefHeight="600.0" prefWidth="800.0" styleClass="splash-screen" stylesheets="@../css/ui-utils.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chamodshehanka.pizzaHutClient.view.controller.SplashScreenController">
+   <children>
+      <ImageView fitHeight="198.0" fitWidth="324.0" layoutX="235.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Pizza-Hut-Logo.png" />
+         </image>
+      </ImageView>
+      <JFXSpinner layoutX="364.0" layoutY="458.0" />
+   </children>
+</AnchorPane>

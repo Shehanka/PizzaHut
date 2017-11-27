@@ -1,0 +1,20 @@
+.splash-screen{
+    -fx-background-color: linear-gradient(to top, #d31027, #ea384d);;
+}
+
+.fxml{
+    -fx-background-color: #ea384d;
+}
+
+.customer-pane{
+    -fx-background-color: #1abc9c;
+}
+
+.fxml2{
+    -fx-background-color: #d31027;
+    -fx-background-radius: 0 0 100 100;
+}
+
+.fxml3{
+    -fx-background-color: #2ecc71;
+}

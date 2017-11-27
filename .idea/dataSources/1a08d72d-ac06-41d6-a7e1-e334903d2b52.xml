@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="pizzahut@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="pizzahut">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="php_example"/>
+    <schema id="7" parent="1" name="sakila"/>
+    <schema id="8" parent="1" name="student"/>
+    <schema id="9" parent="1" name="studentform"/>
+    <schema id="10" parent="1" name="sys"/>
+    <schema id="11" parent="1" name="talkto"/>
+    <schema id="12" parent="1" name="thogakade"/>
+    <schema id="13" parent="1" name="world"/>
+    <table id="14" parent="2" name="chef"/>
+    <table id="15" parent="2" name="customer"/>
+    <table id="16" parent="2" name="item"/>
+    <table id="17" parent="2" name="orderdetail"/>
+    <table id="18" parent="2" name="orders"/>
+    <column id="19" parent="14" name="chefID">
+      <Position>1</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="14" name="oid">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <key id="21" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>chefID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="22" parent="15" name="cid">
+      <Position>1</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="23" parent="15" name="name">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="24" parent="15" name="address">
+      <Position>3</Position>
+      <DataType>varchar(500)|0</DataType>
+    </column>
+    <column id="25" parent="15" name="contactNo">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="26" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>cid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="27" parent="16" name="code">
+      <Position>1</Position>
+      <DataType>varchar(6)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="28" parent="16" name="description">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="29" parent="16" name="unitPrice">
+      <Position>3</Position>
+      <DataType>decimal(8,2)|0</DataType>
+    </column>
+    <key id="30" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>code</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="31" parent="17" name="oid">
+      <Position>1</Position>
+      <DataType>varchar(6)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="17" name="code">
+      <Position>2</Position>
+      <DataType>varchar(6)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="17" name="qty">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="34" parent="17" name="unitPrice">
+      <Position>4</Position>
+      <DataType>decimal(8,2)|0</DataType>
+    </column>
+    <index id="35" parent="17" name="code">
+      <ColNames>code</ColNames>
+    </index>
+    <key id="36" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>oid
+code</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="37" parent="17" name="orderdetail_ibfk_1">
+      <ColNames>oid</ColNames>
+      <RefSchemaName>pizzahut</RefSchemaName>
+      <RefTableName>orders</RefTableName>
+      <RefColNames>oid</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="38" parent="17" name="orderdetail_ibfk_2">
+      <ColNames>code</ColNames>
+      <RefSchemaName>pizzahut</RefSchemaName>
+      <RefTableName>item</RefTableName>
+      <RefColNames>code</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="39" parent="18" name="oid">
+      <Position>1</Position>
+      <DataType>varchar(6)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="18" name="orderDate">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="41" parent="18" name="cid">
+      <Position>3</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <index id="42" parent="18" name="cid">
+      <ColNames>cid</ColNames>
+    </index>
+    <key id="43" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>oid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="44" parent="18" name="orders_ibfk_1">
+      <ColNames>cid</ColNames>
+      <RefSchemaName>pizzahut</RefSchemaName>
+      <RefTableName>customer</RefTableName>
+      <RefColNames>cid</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+  </database-model>
+</dataSource>
